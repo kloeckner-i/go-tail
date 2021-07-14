@@ -1,6 +1,6 @@
 # go-tail
 
-A go package for tailing files. `go get -u github.com/papertrail/go-tail`
+A go package for tailing files. `go get -u github.com/kloeckner-i/go-tail`
 
 ## Usage
 

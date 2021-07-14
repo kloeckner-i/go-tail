@@ -158,19 +158,21 @@ func (t *Follower) follow() error {
 					l := len(s)
 					if l == 0 {
 						<-time.NewTimer(time.Millisecond * 100).C
-					} 
+					}
 					t.offset, err = t.file.Seek(-int64(l), io.SeekCurrent)
 					if err != nil {
 						return err
 					}
 
 					t.reader.Reset(t.file)
-					break
+					goto REACHED_EOF
 				}
 
 				t.sendLine(s, discarded)
 			}
 		}
+
+	REACHED_EOF:
 
 		// we're now at EOF, so wait for changes
 		select {
