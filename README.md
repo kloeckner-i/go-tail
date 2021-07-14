@@ -14,7 +14,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/papertrail/go-tail/follower"
+	"github.com/kloeckner-i/go-tail/follower"
 )
 
 func main() {
